@@ -1,0 +1,26 @@
+aiohttp
+loguru
+nest_asyncio
+numpy
+ openai>=1.13.3,<2.0.0
+pandas
+pyalex
+python-dotenv
+requests
+requests-cache
+scikit-learn
+tenacity
+tqdm
+unidecode
+click
+pytest
+scholarly
+crewai
+graphviz
+pdfminer.six
+# Documentation dependencies for building MkDocs site
+mkdocs>=1.5.0
+mkdocs-material>=9.0.0
+mkdocstrings>=0.23.0
+httpx<0.28
+tqdm

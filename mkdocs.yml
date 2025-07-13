@@ -1,0 +1,29 @@
+site_name: "RevSys Documentation"
+repo_name: "RevSys"
+  
+# Plugins
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          path: [src]
+          #setup_commands:
+            # Ensure the 'src' directory is on the Python path for imports
+          #  - "import sys; sys.path.insert(0, 'src')"
+          rendering:
+            show_root_toc_entry: false
+            render_toc: true
+            render_submodules: true
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - API Reference: api.md
+theme:
+  name: material
+markdown_extensions:
+  - toc:
+      permalink: True
+  - admonition
+  - codehilite
+  - pymdownx.superfences

@@ -1,0 +1,41 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: redis-cache
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  revsys:
+    build: .
+    container_name: revsys-cli
+    environment:
+      - CACHE_ENABLED=${CACHE_ENABLED:-false}
+      - CACHE_EXPIRE=${CACHE_EXPIRE:-3600}
+    volumes:
+      - .:/app
+      - ./notebooks/env.txt:/app/.env
+    entrypoint: ["revsys"]
+    command: ["search", "--help"]
+    depends_on:
+      - redis
+
+  orchestrator:
+    build: .
+    container_name: revsys-orch
+    environment:
+      - CREWAI_API_KEY=${CREWAI_API_KEY}
+      - CACHE_ENABLED=${CACHE_ENABLED:-false}
+      - CACHE_EXPIRE=${CACHE_EXPIRE:-3600}
+    volumes:
+      - .:/app
+      - ./notebooks/env.txt:/app/.env
+    entrypoint: ["python3", "src/revsys/orchestrator.py"]
+    depends_on:
+      - revsys
+      - redis
+
+volumes:
+  redis-data:
+    driver: local

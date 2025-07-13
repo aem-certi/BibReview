@@ -1,0 +1,17 @@
+search_task:
+  description: >
+    Execute the search for articles using the provided parameters.
+    Returns a dataset of article metadata.
+  agent: search_agent
+
+triage_task:
+  description: >
+    Review and filter the search results, keeping only relevant articles.
+    Use AI-assisted criteria.
+  agent: triage_agent
+
+review_task:
+  description: >
+    Generate a systematic review summary based on the filtered articles.
+    Produce a consolidated report.
+  agent: review_agent

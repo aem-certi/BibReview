@@ -1,0 +1,22 @@
+image: python:3.11
+
+pipelines:
+  default:
+    - step:
+        name: Install dependencies and run tests
+        caches:
+          - pip
+        script:
+          - python -m pip install --upgrade pip
+          - apt-get update && apt-get install -y graphviz
+          - pip install -r requirements.txt
+          - pip install -e .
+          - pytest --maxfail=1 --disable-warnings -q
+  branches:
+    feature/*:
+      - step: *default
+    main:
+      - step: *default
+  pull-requests:
+    '**':
+      - step: *default

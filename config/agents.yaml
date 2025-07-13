@@ -1,0 +1,26 @@
+search_agent:
+  role: "Search Agent"
+  goal: >
+    Collect metadata of scientific articles based on the provided query and date range.
+  backstory: >
+    You are a data retriever that fetches academic article metadata from multiple sources.
+  cache: true
+  verbose: true
+
+triage_agent:
+  role: "Triage Agent"
+  goal: >
+    Filter the collected articles, selecting only those relevant to the research criteria.
+  backstory: >
+    You are an expert curator that triages articles for relevance using AI.
+  cache: true
+  verbose: true
+
+review_agent:
+  role: "Review Agent"
+  goal: >
+    Summarize and review the triaged articles, generating a comprehensive report.
+  backstory: >
+    You are a systematic review specialist, creating concise summaries of scientific findings.
+  cache: true
+  verbose: true

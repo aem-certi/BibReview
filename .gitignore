@@ -1,0 +1,72 @@
+ # Byte-compiled / optimized / DLL files
+ __pycache__/
+ *.py[cod]
+ *$py.class
+
+ # Distribution / packaging
+ build/
+ dist/
+ *.egg-info/
+ .eggs/
+ *.egg
+ *.whl
+
+ # Virtual environments
+ .env
+ .venv/
+ env/
+ /.venv/
+
+ # IDEs and editors
+ .vscode/
+ .idea/
+ *.swp
+ *~
+
+ # Test and cache
+ .pytest_cache/
+ .cache/
+ http_cache.sqlite
+ *.sqlite
+.__pycache__/
+src/cache/http_cache.sqlite
+
+src/revsys.egg-info
+
+ # Logs
+ *.log
+ app.log
+ src/logs/
+
+ # Data and cache directories
+ src/cache/
+ cache/
+ notebooks/data/
+
+ # Jupyter Notebook checkpoints
+ .ipynb_checkpoints/
+
+ # Temporary and output files
+ tmp*.csv
+ results.csv
+ triaged.csv
+ triaged_arxiv.csv
+ repomix-output.xml
+ *.pdf
+ *.txt
+ .continue/
+ # OS files
+ .DS_Store
+ Thumbs.db
+.env
+*.csv
+*.pdf
+directives.json
+prisma_flowchart
+src/logs/app.log
+notebooks/.DS_Store
+src/.DS_Store
+src/revsys/.DS_Store
+*.pyc
+*.DS_Store
+.DS_Store
